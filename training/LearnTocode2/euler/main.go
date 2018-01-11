@@ -5,12 +5,14 @@ import (
 )
 
 func nextFibNum(num1 int, num2 int) int {
-	// returns sum of two ints
+	// returns sum of two ints, for next fib
 
 	return num1 + num2
 }
 
 func iseven(number int) bool {
+	// decide if int is even or not
+
 	if number%2 == 0 {
 		return true
 	}
@@ -37,3 +39,8 @@ func main() {
 	fmt.Printf("%v%v\n", "Sum of even fib numbers up to 4 Million: ", fibSum)
 	fmt.Println("Last fib number in this series is: ", fibSeries[len(fibSeries)-2])
 }
+
+/* By considering the terms in the Fibonacci sequence whose values do not exceed four million,
+find the sum of the even-valued terms.
+
+*/
