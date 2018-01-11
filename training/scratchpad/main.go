@@ -5,6 +5,8 @@ import (
 )
 
 func nextFibNum(num1 int, num2 int) int {
+	// returns sum of two ints
+
 	return num1 + num2
 }
 
@@ -17,21 +19,21 @@ func iseven(number int) bool {
 }
 
 func main() {
-	fibSeries := []int{1, 2}
+	fibSeries := make([]int, 2)
+	fibSeries[0] = 1
+	fibSeries[1] = 2
 	fibSum := fibSeries[1]
-	fmt.Println(fibSeries)
-	fmt.Println(fibSum)
 
-	/* 	for i := 0; i >= 0; i++ {
-	   		if fibSeries[i]+fibSeries[i+1] >= 4000000 {
-	   			break
-	   		} else if iseven(nextFibNum(fibSeries[i], fibSeries[i+1])) {
-	   			fibSeries = append(fibSeries, nextFibNum(fibSeries[i], fibSeries[i+1]))
-	   			fibSum += fibSeries[len(fibSeries)-1]
-	   		}
-	   	}
+	for i := 0; i >= 0; i++ {
+		fibSeries = append(fibSeries, nextFibNum(fibSeries[i], fibSeries[i+1]))
 
-	   	fmt.Printf("%v\n", fibSum)
-	   	fmt.Println(fibSeries[len(fibSeries)-1])
-	*/
+		if (nextFibNum(fibSeries[i], fibSeries[i+1])) > 4000000 {
+			break
+		} else if iseven(nextFibNum(fibSeries[i], fibSeries[i+1])) {
+			fibSum += fibSeries[len(fibSeries)-1]
+		}
+	}
+	fmt.Println("First 10 fib numbers: ", fibSeries[:10])
+	fmt.Printf("%v%v\n", "Sum of even fib numbers up to 4 Million: ", fibSum)
+	fmt.Println("Last fib number in this series is: ", fibSeries[len(fibSeries)-2])
 }
