@@ -9,10 +9,15 @@ import (
 )
 
 func main() {
+	takeinput()
 	inputtosum := grabinput()
 	fmt.Println("second item came out as", stringsum(inputtosum))
 }
 
+func takeinput() {
+	var input string
+	fmt.Scanln(&input)
+}
 func grabinput() string {
 	reader := bufio.NewReader(os.Stdin)
 	fmt.Println("Enter input: ")
