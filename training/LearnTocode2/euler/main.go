@@ -14,6 +14,7 @@ func iseven(number int) bool {
 	// decide if int is even or not
 
 	if number%2 == 0 {
+
 		return true
 	}
 
